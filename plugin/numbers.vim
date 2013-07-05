@@ -35,33 +35,33 @@ if v:version < 703 || &cp
     finish
 endif
 
-let g:mode=0
-let g:center=1
+let s:mode=0
+let s:center=1
 
 function! SetNumbers()
-    let g:mode = 1
+    let s:mode = 1
     call ResetNumbers()
 endfunc
 
 function! SetRelative()
-    let g:mode = 0
+    let s:mode = 0
     call ResetNumbers()
 endfunc
 
 function! NumbersToggle()
-    if (g:mode == 1)
-        let g:mode = 0
+    if (s:mode == 1)
+        let s:mode = 0
         set relativenumber
     else
-        let g:mode = 1
+        let s:mode = 1
         set number
     endif
 endfunc
 
 function! ResetNumbers()
-    if(g:center == 0)
+    if(s:center == 0)
         set number
-    elseif(g:mode == 0)
+    elseif(s:mode == 0)
         set relativenumber
     else
         set number
@@ -69,12 +69,12 @@ function! ResetNumbers()
 endfunc
 
 function! Center()
-    let g:center = 1
+    let s:center = 1
     call ResetNumbers()
 endfunc
 
 function! Uncenter()
-    let g:center = 0
+    let s:center = 0
     call ResetNumbers()
 endfunc
 

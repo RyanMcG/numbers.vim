@@ -26,7 +26,7 @@ endif
 let g:loaded_numbers = 1
 
 if (!exists('g:enable_numbers'))
-	let g:enable_numbers = 1
+    let g:enable_numbers = 1
 endif
 
 if v:version < 703 || &cp
@@ -116,5 +116,5 @@ command! -nargs=0 NumbersOnOff call NumbersOnOff()
 let &cpo = s:save_cpo
 
 if (g:enable_numbers)
-	call NumbersEnable()
+    call NumbersEnable()
 endif
